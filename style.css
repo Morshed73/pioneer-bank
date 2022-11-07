@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     margin: 0px;
     padding: 0px;
@@ -28,4 +29,8 @@
 }
 .submit-btn{
     margin-bottom: 10px;
+=======
+.bank-title{
+    text-align: center;
+>>>>>>> 1d31c0f26e5988f06ad898d8b58e7d11bb01f3be
 }
