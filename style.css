@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 *{
     margin: 0px;
     padding: 0px;
 }
-#login-area{
+#login-area, #transaction-area{
     margin-top: 200px;
     margin-left: 400px;
     margin-right: 400px;
@@ -29,8 +28,34 @@
 }
 .submit-btn{
     margin-bottom: 10px;
-=======
-.bank-title{
-    text-align: center;
->>>>>>> 1d31c0f26e5988f06ad898d8b58e7d11bb01f3be
+}
+#transaction-area{
+    display: none;
+}
+.transaction-state, h5{
+    font-size: 20px;
+}
+.transaction-state, h2{
+    font-size: 40px;
+}
+.transaction-state{
+    height: 140px;
+    width: 260px;
+    border-radius: 15px;
+    margin-left: 65px;
+    margin-right: 30px;
+    color: #ffffff;
+}
+.transaction-item{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.deposit{
+    background-color: #5E45C2;
+}
+.withdraw{
+    background-color: #E88F72;
+}
+.balance{
+    background-color: #EA9A0D;
 }
