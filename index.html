@@ -62,10 +62,22 @@
             transactionArea.style.display = "block";
             console.log("someone has entered in transaction area.");
         })
-        //deposit button 
-        const depositBtn = document.getElementById("current-deposit");
-        depositBtn.addEventListener("click", function(){
-            
+        //deposit button
+        const depositSubmit = document.getElementById("deposit-submit");
+        depositSubmit.addEventListener("click", function(){
+            const depositAmount = document.getElementById("deposit-amount").value;
+            const depositAmountNumber = parseFloat(depositAmount);
+            const currentAmount = document.getElementById("current-amount").innerText;
+            const currentAmountNumber = parseFloat(currentAmount);
+            const totalDeposit = depositAmountNumber + currentAmountNumber;
+            // balance controls here
+            const currentBalance = document.getElementById("current-balance").innerText;
+            const currentBalanceNumber = parseFloat(currentBalance);
+            const totalBalance = currentBalanceNumber + depositAmountNumber;
+
+            document.getElementById("current-amount").innerText = totalDeposit;
+            document.getElementById("current-balance").innerText = totalBalance;
+            document.getElementById("deposit-amount").value = "";
         })
 
 
