@@ -68,27 +68,39 @@
         const depositSubmit = document.getElementById("deposit-submit");
         depositSubmit.addEventListener("click", function(){
             const depositAmount = document.getElementById("deposit-amount").value;
-            const depositAmountNum = parseFloat(depositAmount);
-            const currentDeposit = document.getElementById("current-deposit").innerText;
-            const currentDepositNum = parseFloat(currentDeposit);
-            const totalDeposit = depositAmountNum + currentDepositNum;
-            const totalBalance = totalDeposit + Number(currentBalance.innerText);
-            document.getElementById("current-deposit").innerText = totalDeposit;
-            currentBalance.innerText = totalBalance;
-            document.getElementById("deposit-amount").value = "";
+            if(depositAmount < 0){
+                alert("Deposit amount cannot be negative.");
+                document.getElementById("deposit-amount").value = "";
+            }
+            else{
+                const depositAmountNum = parseFloat(depositAmount);
+                const currentDeposit = document.getElementById("current-deposit").innerText;
+                const currentDepositNum = parseFloat(currentDeposit);
+                const totalDeposit = depositAmountNum + currentDepositNum;
+                const totalBalance = totalDeposit + Number(currentBalance.innerText);
+                document.getElementById("current-deposit").innerText = totalDeposit;
+                currentBalance.innerText = totalBalance;
+                document.getElementById("deposit-amount").value = "";
+            }
         })
         // withdraw section 
         const withdrawSubmit = document.getElementById("withdraw-submit");
         withdrawSubmit.addEventListener("click", function(){
             const withdrawAmount = document.getElementById("withdraw-amount").value;
-            const withdrawAmountNum = parseFloat(withdrawAmount);
-            const currentWithdraw = document.getElementById("current-withdraw").innerText;
-            const currentWithdrawNum = parseFloat(currentWithdraw);
-            const totalWithdraw = withdrawAmountNum + currentWithdrawNum;
-            const totalBalance = Number(currentBalance.innerText) - totalWithdraw;
-            document.getElementById("current-withdraw").innerText = totalWithdraw;
-            currentBalance.innerText = totalBalance;
-            document.getElementById("withdraw-amount").value = "";
+            if(withdrawAmount < 0){
+                alert("Withdraw amount cannot be negative.");
+                document.getElementById("withdraw-amount").value = "";
+            }
+            else{
+                const withdrawAmountNum = parseFloat(withdrawAmount);
+                const currentWithdraw = document.getElementById("current-withdraw").innerText;
+                const currentWithdrawNum = parseFloat(currentWithdraw);
+                const totalWithdraw = withdrawAmountNum + currentWithdrawNum;
+                const totalBalance = Number(currentBalance.innerText) - totalWithdraw;
+                document.getElementById("current-withdraw").innerText = totalWithdraw;
+                currentBalance.innerText = totalBalance;
+                document.getElementById("withdraw-amount").value = "";
+            }
         })
     </script>
 </body>
